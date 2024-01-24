@@ -1,0 +1,241 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Background */
+.main-bg {
+    background-image: url('./660691.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+    order: 2;
+    margin-top: 15px; /* Adjusted margin for social-icons */
+}
+
+.social-icons.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.social-icons a {
+    margin: 0 0.5rem;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Donate Button */
+.donate-btn {
+    background-color: #0d6efd;
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    order: 1;
+    margin-top: 15px; /* Adjusted margin for donate button */
+}
+
+.donate-btn:hover {
+    animation-name: shake;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.donate-btn:active {
+    background-color: #0b5ed7;
+    transform: translateY(1px);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+.modal-content {
+    background-color: #f9f9f9;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Content Header */
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 20px; /* Add some margin between content-header and qr */
+}
+
+.content-header .images {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 15px;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+}
+
+.content-header .images:hover {
+    transform: scale(1.1);
+}
+
+.username {
+    font-size: 2.0rem;
+}
+
+/* QR Code */
+.qr {
+    text-align: center;
+}
+
+.qr img {
+    border-radius: 3%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Content Footer */
+.z-content-footer {
+    margin: 0 auto 1.5rem;
+    width: 23.5em;
+    height: 50%;
+    /* background-color: #ffffff6a; */
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Content */
+.main-content {
+    border-radius: 3%;
+    background-color: #ffffff66;
+    width: 25.5rem;
+    margin: auto;
+    margin-top: 3.5rem;
+    height: calc(100vh - 5.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fadeIn 1s ease-in-out;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 768px) {
+    .main-content {
+        margin: auto;
+        margin-top: 3.5rem;
+        width: 90%;
+        height: auto;
+    }
+    
+    .z-content-header,
+    .z-content-footer {
+        width: 90%;
+        height: 30%;
+    }
+    .content-header .images {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-left: 2.5rem;
+        object-fit: cover;
+        transition: transform 0.2s ease-in-out;
+    }
+    .username {
+        margin-left: 2.5rem;
+        font-size: 2.0rem;
+    }
+    .qr img {
+        margin-left: 2.5rem;
+        margin-bottom: 1rem;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .main-content {
+        margin: auto;
+        margin-top: 3.5rem;
+        width: 90%;
+        height: auto;
+    }
+    
+    .z-content-header,
+    .z-content-footer {
+        width: 60%;
+        height: 40%;
+    }
+
+    .username {
+        font-size: 2.2rem;
+        margin: auto;
+        margin-top: 2rem;
+    }
+}
